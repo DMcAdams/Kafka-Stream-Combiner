@@ -1,7 +1,7 @@
  {
     "namespace": "com.example.kafkaDemo.schemas",
     "type": "record",
-    "name": "CustomerBalance",
+    "name": "Balance",
     "fields":[
         {
             "name": "accountId",
@@ -12,12 +12,8 @@
             "type": "string"
         },
         {
-            "name": "name", 
+            "name": "balance", 
             "type": "string"
-        },
-        {
-            "name": "balanceAmount",
-            "type": "float"
         }
     ]
 }

@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Balance extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8022400602171891561L;
+  private static final long serialVersionUID = -7289712849030671055L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Balance\",\"namespace\":\"com.example.kafkaDemo.schemas\",\"fields\":[{\"name\":\"accountId\",\"type\":\"string\"},{\"name\":\"customerId\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"balanceAmount\",\"type\":\"float\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Balance\",\"namespace\":\"com.example.kafkaDemo.schemas\",\"fields\":[{\"name\":\"accountId\",\"type\":\"string\"},{\"name\":\"customerId\",\"type\":\"string\"},{\"name\":\"balanceAmount\",\"type\":\"float\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,7 +75,6 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
 
   private java.lang.CharSequence accountId;
   private java.lang.CharSequence customerId;
-  private java.lang.CharSequence name;
   private float balanceAmount;
 
   /**
@@ -89,13 +88,11 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
    * All-args constructor.
    * @param accountId The new value for accountId
    * @param customerId The new value for customerId
-   * @param name The new value for name
    * @param balanceAmount The new value for balanceAmount
    */
-  public Balance(java.lang.CharSequence accountId, java.lang.CharSequence customerId, java.lang.CharSequence name, java.lang.Float balanceAmount) {
+  public Balance(java.lang.CharSequence accountId, java.lang.CharSequence customerId, java.lang.Float balanceAmount) {
     this.accountId = accountId;
     this.customerId = customerId;
-    this.name = name;
     this.balanceAmount = balanceAmount;
   }
 
@@ -111,8 +108,7 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: return accountId;
     case 1: return customerId;
-    case 2: return name;
-    case 3: return balanceAmount;
+    case 2: return balanceAmount;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -124,8 +120,7 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: accountId = (java.lang.CharSequence)value$; break;
     case 1: customerId = (java.lang.CharSequence)value$; break;
-    case 2: name = (java.lang.CharSequence)value$; break;
-    case 3: balanceAmount = (java.lang.Float)value$; break;
+    case 2: balanceAmount = (java.lang.Float)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -162,23 +157,6 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
    */
   public void setCustomerId(java.lang.CharSequence value) {
     this.customerId = value;
-  }
-
-  /**
-   * Gets the value of the 'name' field.
-   * @return The value of the 'name' field.
-   */
-  public java.lang.CharSequence getName() {
-    return name;
-  }
-
-
-  /**
-   * Sets the value of the 'name' field.
-   * @param value the value to set.
-   */
-  public void setName(java.lang.CharSequence value) {
-    this.name = value;
   }
 
   /**
@@ -241,7 +219,6 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
 
     private java.lang.CharSequence accountId;
     private java.lang.CharSequence customerId;
-    private java.lang.CharSequence name;
     private float balanceAmount;
 
     /** Creates a new Builder */
@@ -263,13 +240,9 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
         this.customerId = data().deepCopy(fields()[1].schema(), other.customerId);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.name)) {
-        this.name = data().deepCopy(fields()[2].schema(), other.name);
+      if (isValidValue(fields()[2], other.balanceAmount)) {
+        this.balanceAmount = data().deepCopy(fields()[2].schema(), other.balanceAmount);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
-      }
-      if (isValidValue(fields()[3], other.balanceAmount)) {
-        this.balanceAmount = data().deepCopy(fields()[3].schema(), other.balanceAmount);
-        fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
     }
 
@@ -287,13 +260,9 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
         this.customerId = data().deepCopy(fields()[1].schema(), other.customerId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.name)) {
-        this.name = data().deepCopy(fields()[2].schema(), other.name);
+      if (isValidValue(fields()[2], other.balanceAmount)) {
+        this.balanceAmount = data().deepCopy(fields()[2].schema(), other.balanceAmount);
         fieldSetFlags()[2] = true;
-      }
-      if (isValidValue(fields()[3], other.balanceAmount)) {
-        this.balanceAmount = data().deepCopy(fields()[3].schema(), other.balanceAmount);
-        fieldSetFlags()[3] = true;
       }
     }
 
@@ -378,46 +347,6 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
     }
 
     /**
-      * Gets the value of the 'name' field.
-      * @return The value.
-      */
-    public java.lang.CharSequence getName() {
-      return name;
-    }
-
-
-    /**
-      * Sets the value of the 'name' field.
-      * @param value The value of 'name'.
-      * @return This builder.
-      */
-    public com.example.kafkaDemo.schemas.Balance.Builder setName(java.lang.CharSequence value) {
-      validate(fields()[2], value);
-      this.name = value;
-      fieldSetFlags()[2] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'name' field has been set.
-      * @return True if the 'name' field has been set, false otherwise.
-      */
-    public boolean hasName() {
-      return fieldSetFlags()[2];
-    }
-
-
-    /**
-      * Clears the value of the 'name' field.
-      * @return This builder.
-      */
-    public com.example.kafkaDemo.schemas.Balance.Builder clearName() {
-      name = null;
-      fieldSetFlags()[2] = false;
-      return this;
-    }
-
-    /**
       * Gets the value of the 'balanceAmount' field.
       * @return The value.
       */
@@ -432,9 +361,9 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public com.example.kafkaDemo.schemas.Balance.Builder setBalanceAmount(float value) {
-      validate(fields()[3], value);
+      validate(fields()[2], value);
       this.balanceAmount = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -443,7 +372,7 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return True if the 'balanceAmount' field has been set, false otherwise.
       */
     public boolean hasBalanceAmount() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[2];
     }
 
 
@@ -452,7 +381,7 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public com.example.kafkaDemo.schemas.Balance.Builder clearBalanceAmount() {
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -463,8 +392,7 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
         Balance record = new Balance();
         record.accountId = fieldSetFlags()[0] ? this.accountId : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.customerId = fieldSetFlags()[1] ? this.customerId : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.name = fieldSetFlags()[2] ? this.name : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.balanceAmount = fieldSetFlags()[3] ? this.balanceAmount : (java.lang.Float) defaultValue(fields()[3]);
+        record.balanceAmount = fieldSetFlags()[2] ? this.balanceAmount : (java.lang.Float) defaultValue(fields()[2]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -501,8 +429,6 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
 
     out.writeString(this.customerId);
 
-    out.writeString(this.name);
-
     out.writeFloat(this.balanceAmount);
 
   }
@@ -516,12 +442,10 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
 
       this.customerId = in.readString(this.customerId instanceof Utf8 ? (Utf8)this.customerId : null);
 
-      this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
-
       this.balanceAmount = in.readFloat();
 
     } else {
-      for (int i = 0; i < 4; i++) {
+      for (int i = 0; i < 3; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.accountId = in.readString(this.accountId instanceof Utf8 ? (Utf8)this.accountId : null);
@@ -532,10 +456,6 @@ public class Balance extends org.apache.avro.specific.SpecificRecordBase impleme
           break;
 
         case 2:
-          this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
-          break;
-
-        case 3:
           this.balanceAmount = in.readFloat();
           break;
 

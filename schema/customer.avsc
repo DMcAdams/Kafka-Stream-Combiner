@@ -1,5 +1,5 @@
  {
-    "namespace": "com.example.schemas",
+    "namespace": "com.example.kafkaDemo.schemas",
     "type": "record",
     "name": "Customer",
     "fields":[

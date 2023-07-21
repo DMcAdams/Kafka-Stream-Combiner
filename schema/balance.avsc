@@ -12,8 +12,8 @@
             "type": "string"
         },
         {
-            "name": "balance", 
-            "type": "string"
+            "name": "balanceAmount", 
+            "type": "float"
         }
     ]
 }

@@ -41,7 +41,9 @@ public class CustomerBalanceProccessor {
     public void joinCustomerAndBalance(){
         //create customer and balance streams
         KStream<String, Customer> customerStream = streamsBuilder.stream(customerTopic, Consumed.with(Serdes.String(), this.getSpecificAvroSerde(new SpecificAvroSerde<>())));
-        KStream<String, Balance> balanceStream = streamsBuilder.stream(customerTopic, Consumed.with(Serdes.String(), this.getSpecificAvroSerde(new SpecificAvroSerde<>())));
+        customerStream.peek( (key, customer) -> System.out.println("key:" + key + "value" + customer.toString()));
+        KStream<String, Balance> balanceStream = streamsBuilder.stream(balanceTopic, Consumed.with(Serdes.String(), this.getSpecificAvroSerde(new SpecificAvroSerde<>())));
+        balanceStream.peek( (key,balance) -> System.out.println("key:" + key + "value" + balance.toString()));
         //modify customer stream to use accountId as key
         KStream<String, Customer> customerStreamRekeyed = customerStream.selectKey((key, value) -> value.get("accountId").toString());
         //join the two streams

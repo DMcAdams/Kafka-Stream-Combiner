@@ -1,0 +1,23 @@
+ {
+    "namespace": "com.example.kafkaDemo.schemas",
+    "type": "record",
+    "name": "Balance",
+    "fields":[
+        {
+            "name": "accountId",
+            "type": "string"
+        },
+        {
+            "name": "customerId",
+            "type": "string"
+        },
+        {
+            "name": "name", 
+            "type": "string"
+        },
+        {
+            "name": "balanceAmount",
+            "type": "float"
+        }
+    ]
+}
